@@ -64,19 +64,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-
-        AudioFile ok = new AudioFile();
-        try
-        {
-            ok = AudioFileIO.read(new File("C:\\Users\\Tim Chiu\\Desktop\\A.mp3"));
-        }catch(Exception e)
-        {
-            System.out.println("I CAN'T READ!!!!!");
-        }
-
-        System.out.println("my tag is " + ok.getTag().getFirst(FieldKey.TRACK) + ", my album is " + ok.getTag().getFirst(FieldKey.ALBUM));
-
-
         launch(args);
     }
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="CSIA_FileRenamer.jnlp">
+  <information>
+    <title>CSIA-FileRenamer</title>
+    <vendor>Unknown</vendor>
+    <description>CSIA-FileRenamer</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="CSIA_FileRenamer.jar" size="17348" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="main.Main"  name="CSIA-FileRenamer" />
+  <update check="background"/>
+</jnlp>
