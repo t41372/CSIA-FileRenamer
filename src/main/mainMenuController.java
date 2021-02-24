@@ -7,7 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
-import java.io.File;
+import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -121,7 +121,7 @@ public class mainMenuController //* The Controller for menuScene, the first menu
         deleteWindowController.buildDeleteWindow();
     }
 
-    public void continuousOnAction(ActionEvent actionEvent) {}
+    //public void continuousOnAction(ActionEvent actionEvent) {}
 
     public void readMusicButtonOnAction(ActionEvent actionEvent)
     {
@@ -129,7 +129,7 @@ public class mainMenuController //* The Controller for menuScene, the first menu
         tagWindowController.buildTagWindow();
     }
 
-    public void helpButtonOnAction(ActionEvent actionEvent) {}
+    //public void helpButtonOnAction(ActionEvent actionEvent) {}
 
     public void openFolderOnAction(ActionEvent actionEvent)
     {
@@ -177,10 +177,73 @@ public class mainMenuController //* The Controller for menuScene, the first menu
         refreshlistView();
     }
 
-
+    //Rename the file (RTF)
     public void RTFButtonOnAction(ActionEvent actionevent)
     {
         operation.renameTheFile();
+    }
+
+
+    //Export Naming Setting (ENS) Button On Action
+    public void ENSButtonOnAction(ActionEvent actionEvent) throws IOException {
+        //save a file logic
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialFileName("rename preference");
+        //set the type of file user can save
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("Rename Preference File (*.rp)", "*.rp");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        fileChooser.setTitle("Save your file");
+
+
+        //open the file chooser window, this instance will return the results
+        File selectedFile = fileChooser.showSaveDialog(Main.openPrimaryStage);
+
+        //user may click cancel, so selectedFile could be null
+        if(selectedFile != null)
+        {
+            //print the TTP into file
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(selectedFile)));
+            pw.print(TTPTextBox.getText());
+            pw.close();//save the file
+        }
+
+    }
+
+    //Import Naming Setting (INS) Button On Action
+    public void INSButtonOnAction(ActionEvent actionEvent) throws IOException {
+        //choose a file logic
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("Rename Preference File (*.rp)", "*.rp");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        fileChooser.setTitle("Choose a rename preference (*.rp) file");
+
+
+        //open the file chooser window, this instance will return the results
+        File selectedFile = fileChooser.showOpenDialog(Main.openPrimaryStage);
+        if(selectedFile == null) return; //if the user didn't select a folder, then do nothing and exit.
+
+        BufferedReader br = new BufferedReader(new FileReader(selectedFile));
+
+        String commandFromFile = "";
+        String readLine = br.readLine();
+
+
+        while(readLine != null)
+        {
+            commandFromFile = commandFromFile + readLine + "\n";
+            readLine = br.readLine();
+        }
+
+        if(commandFromFile.length() != 0)
+            TTPTextBox.setText(commandFromFile);
+
+
+
+
     }
 
 

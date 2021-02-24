@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.mainMenuController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.mainMenuController">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />
@@ -22,8 +21,8 @@
                 <Label layoutX="55.0" layoutY="36.0" prefHeight="17.0" prefWidth="196.0" text="Task That will Perform (TTP)" />
                 <ListView fx:id="previewNameListView" layoutX="570.0" layoutY="115.0" prefHeight="348.0" prefWidth="217.0" />
             <ListView fx:id="originalNameListView" layoutX="346.0" layoutY="115.0" prefHeight="348.0" prefWidth="217.0" />
-            <Button layoutX="55.0" layoutY="257.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="102.0" text="Import Naming Setting (INS)" wrapText="true" />
-            <Button layoutX="197.0" layoutY="257.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="102.0" text="Export Naming Settings (ENS)" wrapText="true" />
+            <Button fx:id="INSButton" layoutX="55.0" layoutY="257.0" mnemonicParsing="false" onAction="#INSButtonOnAction" prefHeight="44.0" prefWidth="102.0" text="Import Naming Setting (INS)" wrapText="true" />
+            <Button fx:id="ENSButton" layoutX="197.0" layoutY="257.0" mnemonicParsing="false" onAction="#ENSButtonOnAction" prefHeight="44.0" prefWidth="102.0" text="Export Naming Settings (ENS)" wrapText="true" />
             <Button fx:id="RTFButton" layoutX="436.0" layoutY="481.0" mnemonicParsing="false" onAction="#RTFButtonOnAction" prefHeight="33.0" prefWidth="255.0" text="Rename the File (RTF) !!" />
             <Button fx:id="openFolderButton" layoutX="346.0" layoutY="53.0" mnemonicParsing="false" onAction="#openFolderOnAction" prefHeight="25.0" prefWidth="102.0" text="open folder" />
             <Button fx:id="openFileButton" layoutX="455.0" layoutY="53.0" mnemonicParsing="false" onAction="#openFileOnAction" prefHeight="25.0" prefWidth="102.0" text="open file" />
