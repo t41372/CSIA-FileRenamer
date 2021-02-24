@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.deleteWindowController">
+   <children>
+      <Button fx:id="OKButton" layoutX="228.0" layoutY="238.0" mnemonicParsing="false" onAction="#okOnAction" prefHeight="68.0" prefWidth="144.0" text="OK" />
+      <TextField fx:id="deleteFromTextField" layoutX="183.0" layoutY="140.0" prefHeight="25.0" prefWidth="87.0" />
+      <TextField fx:id="deleteToTextField" layoutX="183.0" layoutY="192.0" prefHeight="25.0" prefWidth="87.0" />
+      <Label layoutX="183.0" layoutY="123.0" prefHeight="17.0" prefWidth="128.0" text="Delete from (digit)" wrapText="true" />
+      <Label layoutX="183.0" layoutY="175.0" prefHeight="17.0" prefWidth="77.0" text="To (digit)" />
+      <CheckBox fx:id="countFromRightCheckBox" layoutX="288.0" layoutY="167.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="169.0" text="Index Count from Right" />
+   </children>
+</AnchorPane>

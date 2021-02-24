@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.mainMenuController">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="549.0" prefWidth="837.0">
+            <children>
+                <Button fx:id="replaceButton" layoutX="55.0" layoutY="315.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#replaceOnAction" prefHeight="60.0" prefWidth="102.0" text="Replace (R)" textAlignment="CENTER" wrapText="true" />
+                <Button fx:id="deleteButton" layoutX="55.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="60.0" prefWidth="102.0" text="Delete Letters (DL)" textAlignment="CENTER" wrapText="true" />
+                <Button fx:id="readMusicButton" layoutX="55.0" layoutY="454.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#readMusicButtonOnAction" prefHeight="60.0" prefWidth="102.0" text="Read Music File's information" textAlignment="CENTER" wrapText="true" />
+                <Button fx:id="insertButton" layoutX="198.0" layoutY="315.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#insertOnAction" prefHeight="60.0" prefWidth="102.0" text="Insert Texts (IT)" textAlignment="CENTER" wrapText="true" />
+                <Label layoutX="55.0" layoutY="36.0" prefHeight="17.0" prefWidth="196.0" text="Task That will Perform (TTP)" />
+                <Button fx:id="continuousNameButton" layoutX="198.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#continuousOnAction" prefHeight="60.0" prefWidth="102.0" text="Add Continuous Names (ACN)" textAlignment="CENTER" wrapText="true" />
+                <Button fx:id="helpButton" layoutX="197.0" layoutY="454.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#helpButtonOnAction" prefHeight="60.0" prefWidth="102.0" text="HELP!!" textAlignment="CENTER" wrapText="true" />
+                <ListView fx:id="previewNameListView" layoutX="570.0" layoutY="115.0" prefHeight="348.0" prefWidth="217.0" />
+            <ListView fx:id="originalNameListView" layoutX="346.0" layoutY="115.0" prefHeight="348.0" prefWidth="217.0" />
+            <Button layoutX="55.0" layoutY="257.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="102.0" text="Import Naming Setting (INS)" wrapText="true" />
+            <Button layoutX="197.0" layoutY="257.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="102.0" text="Export Naming Settings (ENS)" wrapText="true" />
+            <Button fx:id="RTFButton" layoutX="436.0" layoutY="481.0" mnemonicParsing="false" onAction="#RTFButtonOnAction" prefHeight="33.0" prefWidth="255.0" text="Rename the File (RTF) !!" />
+            <Button fx:id="openFolderButton" layoutX="346.0" layoutY="53.0" mnemonicParsing="false" onAction="#openFolderOnAction" prefHeight="25.0" prefWidth="102.0" text="open folder" />
+            <Button fx:id="openFileButton" layoutX="455.0" layoutY="53.0" mnemonicParsing="false" onAction="#openFileOnAction" prefHeight="25.0" prefWidth="102.0" text="open file" />
+            <Button fx:id="refreshPreviewButton" layoutX="563.0" layoutY="53.0" mnemonicParsing="false" onAction="#refreshPreviewOnAction" text="Refreash Preview" />
+            <TextArea fx:id="TTPTextBox" layoutX="55.0" layoutY="58.0" prefHeight="190.0" prefWidth="247.0" />
+            <Button fx:id="clearListButton" layoutX="675.0" layoutY="53.0" mnemonicParsing="false" onAction="#clearListButtonOnAction" prefHeight="25.0" prefWidth="106.0" text="clear the list" />
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>

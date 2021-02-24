@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.insertWindowController">
+   <children>
+      <Button fx:id="OKButton" layoutX="228.0" layoutY="269.0" mnemonicParsing="false" onAction="#OKButtonOnAction" prefHeight="62.0" prefWidth="144.0" text="OK" />
+      <Label layoutX="78.0" layoutY="123.0" prefHeight="17.0" prefWidth="191.0" text="the Text you want to insert" textAlignment="CENTER" />
+      <Label layoutX="372.0" layoutY="123.0" prefHeight="17.0" prefWidth="191.0" text="where you want to insert (index)" />
+      <TextField fx:id="insertTextField" layoutX="78.0" layoutY="153.0" promptText="type text here" />
+      <TextField fx:id="insertIndexTextField" layoutX="372.0" layoutY="153.0" promptText="type number here" />
+   </children>
+</AnchorPane>
