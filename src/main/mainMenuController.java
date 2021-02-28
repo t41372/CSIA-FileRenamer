@@ -185,7 +185,15 @@ public class mainMenuController //* The Controller for menuScene, the first menu
 
 
     //Export Naming Setting (ENS) Button On Action
-    public void ENSButtonOnAction(ActionEvent actionEvent) throws IOException {
+    public void ENSButtonOnAction(ActionEvent actionEvent) throws IOException
+    {
+        /** Procedure
+         *
+         *  - Open Directory delector window
+         *  - create a new .rp file and print the TTP text in it
+         *
+         * */
+
         //save a file logic
         FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialFileName("rename preference");
@@ -212,7 +220,15 @@ public class mainMenuController //* The Controller for menuScene, the first menu
     }
 
     //Import Naming Setting (INS) Button On Action
-    public void INSButtonOnAction(ActionEvent actionEvent) throws IOException {
+    public void INSButtonOnAction(ActionEvent actionEvent) throws IOException
+    {
+        /**Procesure
+         *
+         * - open directory selector and select a *.rp file
+         * - read the file and put the text into TTP TextBox
+         *
+         * */
+
         //choose a file logic
         FileChooser fileChooser = new FileChooser();
         FileChooser.ExtensionFilter extFilter =

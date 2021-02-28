@@ -21,7 +21,6 @@ public class operation
     //$`renamer`!#splitter#$
     public static String SplitterRegex = "\\$`renamer`!#splitter#\\$";
     public static String SplitterText = "$`renamer`!#splitter#$";
-    public static String TagIndicatorRegex = "\\$`renamer`!#useOfTag#\\$";
     public static String TagIndicatorText = "$`renamer`!#useOfTag#$";
 
     public final static String[] supportedTagType = {"TRACK", "ALBUM", "ARTIST"};
@@ -54,7 +53,9 @@ public class operation
         //new name list record is recorded inside a single refresh preview action
         //whenever the new refresh preview action starts, it should be initialize with fileNames
         Main.newNameList = new LinkedList<>();//initialize the new Name List
-        Main.newNameList.addAll(Main.fileNames);//because we don't want to see, for example, "replace 0 to 000" in "0" into "000000000..." while we press refresh several times
+        //because we don't want to see..
+        //for example, "replace 0 to 000" in "0" into "000000000..." while we press refresh several times
+        Main.newNameList.addAll(Main.fileNames);
 
         if(mainMenuController.Pub_TTPTextBox.getText().equals(""))
         {
@@ -66,12 +67,14 @@ public class operation
         System.out.println("The text in the text box is \"" + command + "\"");
 
 
+        //split the commands into single command. For example, split replace(...); delete(...);
+        String[] tasks = command.replaceAll("\n", "").split(";");
 
-        String[] tasks = command.replaceAll("\n", "").split(";");//split the commands into single command. For example, split replace(...); delete(...);
-
-        for(String target : tasks)//target means single command like replace (..), now we need to identify the type of the command
+        //target means single command like replace (..), now we need to identify the type of the command
+        for(String target : tasks)
         {
-            String[] singleCommandBreakDown = target.trim().split(" "); //break down single command like replace (..) into [replace] [(...)]
+            //break down single command like replace (..) into [replace] [(...)]
+            String[] singleCommandBreakDown = target.trim().split(" ");
             //room number 0 should be the type of the command, for example, replace.
 
             switch (singleCommandBreakDown[0].toLowerCase(Locale.ROOT))
@@ -113,10 +116,19 @@ public class operation
         * which means [x] or [y] contains the identifier "$`renamer`!#splitter#$",
         * we should report error to the user
         *
-        * --
+        * -- change in fileInstance routine:
         * change in fileInstance -> change in fileNames -> change in newNameList -> Based on newNameList, change newNameList through processText(), ->
         *
+        * -------------------------------------------
+        * * Procedure
+        *
+        * - cut the phrase "replace "
+        * - get the be-replace-string and the replace-with-string stored
+        * - poll a file name from originalNameList, apply the rule and put it into newNameList
+        *
         * */
+
+
 
         parameter = parameter.substring(8);//delete the phrase "replace "
 
@@ -233,17 +245,24 @@ public class operation
 
     }
 
-    //todo: doing
+
     public static void insert(String parameter)
     {
         /** Procedure
          * command should be like this "insert [tagIndicator]Text[splitter] to 2",
+         * For tags, the command should be something like "insert FieldKey.TRACK to 2"
          * we always insert texts behind the target character
          *
          * - delete the phrase "insert" from the "parameter"
+         * - seperate theText and insertPosition
+         * - determine whether the command use tag
+         * - - if so - set tag type according to the command
+         * - - enter each file's tag information into theText and insert in to the file name
+         *
+         * - if not use tag, insert theText to insertPosition
          *
          *
-         * For tags, the command should be something like "insert FieldKey.TRACK to 2"
+         *
          *
          * */
 
