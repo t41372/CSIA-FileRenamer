@@ -53,8 +53,22 @@ public class deleteWindowController
         //clear the text boxes
         deleteFromTextField.setText("");
         deleteToTextField.setText("");
+        Giao(2, 2,"");
 
         deleteStage.close();
+    }
+
+
+    /**
+     * @param yia 壓
+     *
+     * @param uuu UUUUUU
+     * @param loop 迴圈時光
+     *
+     * */
+    public void Giao(int yia, int uuu, String loop)
+    {
+
     }
 
 

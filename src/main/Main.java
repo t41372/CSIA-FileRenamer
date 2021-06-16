@@ -5,9 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.jaudiotagger.audio.AudioFile;
-import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.tag.FieldKey;
+
 
 import java.io.File;
 import java.util.LinkedList;
@@ -35,7 +33,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception
     {
 
-        //define scenes
+        //define, load scenes
         Parent root = FXMLLoader.load(getClass().getResource("menuScene.fxml"));
         mainMenuScene = new Scene(root, 837, 549);
 
@@ -56,9 +54,8 @@ public class Main extends Application {
         primaryStage.setScene(mainMenuScene);
         primaryStage.show();
 
+        //let primary stage become accessible to other classes
         openPrimaryStage =  primaryStage;
-
-        //call the initializers
 
     }
 

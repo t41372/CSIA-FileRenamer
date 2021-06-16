@@ -36,7 +36,6 @@ public class tagWindowController
 
 
 
-
     public void OKButtonOnAction(ActionEvent actionEvent)
     {
         /* Procedures

@@ -13,15 +13,14 @@ import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Queue;
 
-import static java.util.Collections.addAll;
 
 public class operation
 {
     //replace 0$`renamer`!#splitter#$googke
     //$`renamer`!#splitter#$
-    public static String SplitterRegex = "\\$`renamer`!#splitter#\\$";
-    public static String SplitterText = "$`renamer`!#splitter#$";
-    public static String TagIndicatorText = "$`renamer`!#useOfTag#$";
+    public final static String SplitterRegex = "\\$`renamer`!#splitter#\\$";
+    public final static String SplitterText = "$`renamer`!#splitter#$";
+    public final static String TagIndicatorText = "$`renamer`!#useOfTag#$";
 
     public final static String[] supportedTagType = {"TRACK", "ALBUM", "ARTIST"};
 
@@ -64,8 +63,6 @@ public class operation
         }
 
         String command = mainMenuController.Pub_TTPTextBox.getText();
-        System.out.println("The text in the text box is \"" + command + "\"");
-
 
         //split the commands into single command. For example, split replace(...); delete(...);
         String[] tasks = command.replaceAll("\n", "").split(";");
@@ -92,18 +89,11 @@ public class operation
                 default:
                     System.out.println("No Valid Command Detected");
             }
-
         }
-
         //update the ListView on GUI
-
-
     }
 
 
-
-
-    //functions of operations ! UNFINISHED!!!!!
 
     public static void replace(String parameter)//finished 2020.1.29
     {
@@ -194,10 +184,6 @@ public class operation
         }
 
 
-
-
-
-
         //in this stage, the names are not renamed yet
         //but the indexes are prepared
 
@@ -227,14 +213,16 @@ public class operation
                 thisDeleteTo = (targetString.length() - deleteFrom) - 1;
                 thisDeleteFrom = (targetString.length() - deleteTo) -1;
                 //System.out.println("-----------------------[after transformation] deleteFrom " + thisDeleteFrom + " to " + thisDeleteTo);
-                //這裡Right Index 變換似乎有些問題
             }
 
 
             //operate a string
-            for (int indx_characterPositionPointer = 0; indx_characterPositionPointer < targetString.length(); indx_characterPositionPointer ++)//this procedure for a single string
-            {// indx_characterPositionPointer will go through all characters in a fileName
-                if(indx_characterPositionPointer < thisDeleteFrom || indx_characterPositionPointer > thisDeleteTo) // if index is not in the delete list
+            for (int indx_characterPositionPointer = 0; indx_characterPositionPointer < targetString.length();
+                 indx_characterPositionPointer ++)//this procedure for a single string
+            {
+                // indx_characterPositionPointer will go through all characters in a fileName
+                // if index is not in the delete list
+                if(indx_characterPositionPointer < thisDeleteFrom || indx_characterPositionPointer > thisDeleteTo)
                     result += targetString.charAt(indx_characterPositionPointer);
             }
 
@@ -254,19 +242,15 @@ public class operation
          * we always insert texts behind the target character
          *
          * - delete the phrase "insert" from the "parameter"
-         * - seperate theText and insertPosition
+         * - separate theText and insertPosition
          * - determine whether the command use tag
          * - - if so - set tag type according to the command
          * - - enter each file's tag information into theText and insert in to the file name
          *
          * - if not use tag, insert theText to insertPosition
-         *
-         *
-         *
-         *
          * */
 
-        parameter = parameter = parameter.substring(7);
+        parameter = parameter.substring(7);
 
         //parameter should have been seperated into "Text" and " to 2"
         String[] parameterCache = parameter.split(SplitterRegex);
@@ -277,7 +261,7 @@ public class operation
         String theText = parameterCache[0];//get the text
 
         boolean useTag = false;
-        FieldKey tagType = FieldKey.TRACK;
+        FieldKey tagType = FieldKey.TRACK;//a default value is tag
         System.out.println("theText == " + theText);
 
         //if the command contains the use of tags expression, we should indicates that
@@ -285,12 +269,14 @@ public class operation
         {
             System.out.println("USED TAG");
             useTag = true;
-            theText = theText.substring(TagIndicatorText.length());//delete the tag Indicator [\\$`renamer`!#useOfTag#\\$]
+            //delete the tag Indicator [\\$`renamer`!#useOfTag#\\$]
+            theText = theText.substring(TagIndicatorText.length());
 
             if(theText.equals(supportedTagType[0])) tagType = FieldKey.TRACK;//TRACK Info
             else if (theText.equals(supportedTagType[1])) tagType = FieldKey.ALBUM;
             else if (theText.equals(supportedTagType[2])) tagType = FieldKey.ARTIST;
-            else System.out.println("\n\n!!!!!!!!!!!!!!!! You've declared the use of Tag, but the type \"" + theText + "\" is unsupported\n\n");
+            else System.out.println("\n\n!!!!!!!!!!!!!!!! You've declared the use of Tag, " +
+                        "but the type \"" + theText + "\" is unsupported\n\n");
         }else System.out.println("NO USE OF TAG");
 
         //get the position index
@@ -322,7 +308,6 @@ public class operation
             if(insertPosition > originalName.length())//if the position index is longer than the file name,
                 insertPosition = originalName.length(); //we shall trim the insert position
 
-
             if(useTag)
             {
                 try {
@@ -340,14 +325,12 @@ public class operation
                     e.printStackTrace();
                 }
             }
-
-            Main.newNameList.offer(originalName.substring(0, insertPosition) + theText + originalName.substring(insertPosition, originalName.length()));
-
+            Main.newNameList.offer(originalName.substring(0, insertPosition) + theText
+                    + originalName.substring(insertPosition, originalName.length()));
         }
 
-
-
     }
+
 
 
 
@@ -366,7 +349,7 @@ public class operation
 
         for(File target : Main.fileInstances)
         {
-            target.renameTo(new File(target.getParent() + "\\" + Main.newNameList.poll()));//效果未知 畢竟queue出來的順序
+            target.renameTo(new File(target.getParent() + "\\" + Main.newNameList.poll()));
         }
         System.out.println("Rename Finished");
 

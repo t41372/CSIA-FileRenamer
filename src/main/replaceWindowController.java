@@ -3,7 +3,7 @@ package main;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.Main;
+
 
 public class replaceWindowController
 {

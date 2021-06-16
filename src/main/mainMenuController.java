@@ -33,8 +33,8 @@ public class mainMenuController //* The Controller for menuScene, the first menu
     }
 
 
-
-    public void refreshlistView()//finished 2021.1.29
+    //finished 2021.1.29
+    public void refreshListView()
     {
         /**Procedure
          * clear the old list of names
@@ -99,7 +99,7 @@ public class mainMenuController //* The Controller for menuScene, the first menu
     public void clearListButtonOnAction(ActionEvent actionEvent)
     {
         Main.fileInstances = new LinkedList<>();
-        refreshlistView();
+        refreshListView();
     }
 
 
@@ -154,7 +154,7 @@ public class mainMenuController //* The Controller for menuScene, the first menu
             Main.fileInstances.offer(target);
         }
         //successfully imported the files into fileInstance
-        refreshlistView();
+        refreshListView();
 
 
     }
@@ -171,10 +171,10 @@ public class mainMenuController //* The Controller for menuScene, the first menu
         System.out.print("the file is ");
         for(File target : selectedFile)
         {
-            System.out.print("\"" + target + "\", ");
+            Main.fileInstances.offer(target);
         }
 
-        refreshlistView();
+        refreshListView();
     }
 
     //Rename the file (RTF)
@@ -185,11 +185,11 @@ public class mainMenuController //* The Controller for menuScene, the first menu
 
 
     //Export Naming Setting (ENS) Button On Action
-    public void ENSButtonOnAction(ActionEvent actionEvent) throws IOException
+    public void ENSButtonOnAction(ActionEvent actionEvent)
     {
         /** Procedure
          *
-         *  - Open Directory delector window
+         *  - Open Directory selector window
          *  - create a new .rp file and print the TTP text in it
          *
          * */
@@ -208,13 +208,15 @@ public class mainMenuController //* The Controller for menuScene, the first menu
         //open the file chooser window, this instance will return the results
         File selectedFile = fileChooser.showSaveDialog(Main.openPrimaryStage);
 
-        //user may click cancel, so selectedFile could be null
-        if(selectedFile != null)
-        {
+        //user may click cancel, so selectedFile could be null, which will throw IOException
+        try {
             //print the TTP into file
             PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(selectedFile)));
             pw.print(TTPTextBox.getText());
             pw.close();//save the file
+        } catch (IOException e)
+        {
+            e.printStackTrace();
         }
 
     }
@@ -248,20 +250,16 @@ public class mainMenuController //* The Controller for menuScene, the first menu
         String readLine = br.readLine();
 
 
-        while(readLine != null)
+        while(readLine != null)//as long as there are lines to read
         {
-            commandFromFile = commandFromFile + readLine + "\n";
-            readLine = br.readLine();
+            commandFromFile = commandFromFile + readLine + "\n";//add the line into command
+            readLine = br.readLine();//read the next line. it could be empty.
         }
 
-        if(commandFromFile.length() != 0)
+        if(commandFromFile.length() != 0)//as long as the file is not empty, import the naming setting
             TTPTextBox.setText(commandFromFile);
 
-
-
-
     }
-
 
 
 

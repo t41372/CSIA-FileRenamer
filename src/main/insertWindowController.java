@@ -32,7 +32,6 @@ public class insertWindowController
 
 
 
-
         //direction
 //        String direction = "";
 //        if(countFromRightCheckBox.isSelected()) direction = "right";//read the direction information from the checkBox
