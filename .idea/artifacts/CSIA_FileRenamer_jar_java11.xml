@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="CSIA-FileRenamer:jar">
+  <artifact type="jar" name="CSIA-FileRenamer:jar-java11">
     <output-path>$PROJECT_DIR$/out/artifacts/CSIA_FileRenamer_jar</output-path>
     <root id="archive" name="CSIA-FileRenamer.jar">
       <element id="module-output" name="CSIA-FileRenamer" />
