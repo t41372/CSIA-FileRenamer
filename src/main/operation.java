@@ -22,7 +22,7 @@ public class operation
     public final static String SplitterText = "$`renamer`!#splitter#$";
     public final static String TagIndicatorText = "$`renamer`!#useOfTag#$";
 
-    public final static String[] supportedTagType = {"TRACK", "ALBUM", "ARTIST"};
+    public final static String[] supportedTagType = {"TRACK", "ALBUM", "ARTIST", "TITLE"};
 
 
     public static void processSettingText()
@@ -44,7 +44,7 @@ public class operation
         * Run through all the commands, like "replace...", "delete ...", "insert..."
         * {
         *       get the first part of the command: like "replace", "delete"
-        *       use switch to launch correct functions according to the command header
+        *       use switch to main.launch correct functions according to the command header
         * }
         *
         * */
@@ -275,6 +275,7 @@ public class operation
             if(theText.equals(supportedTagType[0])) tagType = FieldKey.TRACK;//TRACK Info
             else if (theText.equals(supportedTagType[1])) tagType = FieldKey.ALBUM;
             else if (theText.equals(supportedTagType[2])) tagType = FieldKey.ARTIST;
+            else if(theText.equals(supportedTagType[3])) tagType = FieldKey.TITLE;
             else System.out.println("\n\n!!!!!!!!!!!!!!!! You've declared the use of Tag, " +
                         "but the type \"" + theText + "\" is unsupported\n\n");
         }else System.out.println("NO USE OF TAG");

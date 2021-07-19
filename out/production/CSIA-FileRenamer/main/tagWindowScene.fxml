@@ -15,6 +15,7 @@
                <String fx:value= "TRACK" />
                <String fx:value="ALBUM" />
                <String fx:value="ARTIST" />
+               <String fx:value="TITLE" />
             </FXCollections>
          </items>
          <value>
