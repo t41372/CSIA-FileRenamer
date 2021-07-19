@@ -19,7 +19,7 @@ This program is written in Java 11 (it was java 8 originally but I've migrated i
 
 ## Release?
 
-You can find .jar files (executable) in release.
+You can find .jar files (executable) in [release](https://github.com/t41372/CSIA-FileRenamer/releases/tag/v1.0).
 
 
 
@@ -47,7 +47,7 @@ You're a smart guy and I believe you will automatically understand my software b
 
 It can rename lots of file according to a set of rules. The rules are listed below.
 
-(These are copied from my planning document, you can find it in documents/Crit_A_Planning.pdf)
+(These are copied from my planning document, you can find it in documents/[Crit_A_Planning.pdf](https://github.com/t41372/CSIA-FileRenamer/blob/a549887e524531f3f1d8dbc48c7ed90b323838ef/Documentation/Crit_A_Planning.pdf))
 
 (p.s. those rules are written quite long ago and my English wasn't good back then... so... you know XD)
 
