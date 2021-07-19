@@ -1,5 +1,8 @@
 # CSIA-FileRenamer
 
+![image](https://user-images.githubusercontent.com/36402030/126178106-bfe459cd-1cf7-4880-a2fa-2bc08462c1f1.png)
+
+
 This is a File Renamer written for my IB Computer Science course IA (kinda like a final project).
 
 In which you can rename lots of files easily with a set of rules you made. 
@@ -8,19 +11,19 @@ This program is written in Java 11 (it was java 8 originally but I've migrated i
 
 
 
-#### System Requirement
+## System Requirement
 
 - Java 8 or 11. Any version higher than 11 should work but I've never tested it... who knows lol
 
 
 
-#### Release?
+## Release?
 
 You can find .jar files (executable) in release.
 
 
 
-#### How to Run it?
+## How to Run it?
 
 The one with Java 11 can be run by double-click.
 
@@ -32,15 +35,15 @@ java -jar <the jar file>
 
 
 
-#### How to use it?
+## How to use it?
 
 Discover it **YOURSELF!** 
 
-You're a smart guy and I believe you will automatically understand my software by intuition.
+You're a smart guy and I believe you will automatically understand my software by intuition!
 
 
 
-#### What can it do?
+## What can it do?
 
 It can rename lots of file according to a set of rules. The rules are listed below.
 
