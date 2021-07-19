@@ -2,8 +2,11 @@
 
 ![image](https://user-images.githubusercontent.com/36402030/126178106-bfe459cd-1cf7-4880-a2fa-2bc08462c1f1.png)
 
+
 (本文使用Google翻譯, 因為看起來很有喜感XDD)
+
 (但是我校對過了所以沒有問題)
+
 This readme has a English version. Check it out if you need it! [English Version](https://github.com/t41372/CSIA-FileRenamer/blob/a549887e524531f3f1d8dbc48c7ed90b323838ef/README.md)
 
 這是為我的 IB 計算機科學課程 IA 編寫的文件重命名器（有點像最終項目）。
