@@ -54,7 +54,7 @@ java -jar <the jar file>
 
 它可以根據一組規則重命名大量文件。規則如下。
 
-（這些是從我的計劃文檔中復制的，您可以在文檔/ [Crit_A_Planning.pdf](https://github.com/t41372/CSIA-FileRenamer/blob/a549887e524531f3f1d8dbc48c7ed90b323838ef/Documentation/Crit_A_Planning.pdf) 中找到）
+（這些是從我的計劃文檔中復制的，您可以在Documentation/ [Crit_A_Planning.pdf](https://github.com/t41372/CSIA-FileRenamer/blob/a549887e524531f3f1d8dbc48c7ed90b323838ef/Documentation/Crit_A_Planning.pdf) 中找到）
 
 （ps那些規則是很久以前寫的，當時我的英語不好......所以......你知道XD）
 
