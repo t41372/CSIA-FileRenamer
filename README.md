@@ -65,6 +65,6 @@ Some other functions
 
 - Export the naming rule set to a file, and the user can load the rules in the future.
 - Multiple rules can be assigned and executed in order. For example, the user can enter a series of rules to operate the file name like “replace x with y -> delete the first 3 characters -> insert XXX” 
-- User can preview those rules, but stupid may not be able to understand those rules XD.
+- User can preview those rules, but *stupid* may not be able to understand those rules XD.
 - Some other functions are for you to discover!
 - Yey
