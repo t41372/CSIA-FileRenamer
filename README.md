@@ -5,7 +5,6 @@
 
 > 本文有中文版, 在[這裡](https://github.com/t41372/CSIA-FileRenamer/blob/fff35e194e968b464802bd2073f9ac52829331f7/README_CN.md)
 
-<br/>
 
 This is a File Renamer written for my IB Computer Science course IA (kinda like a final project).
 
@@ -14,13 +13,12 @@ In which you can rename lots of files easily with a set of rules you made.
 This program is written in Java 11 (it was java 8 originally but I've migrated it to Java 11) with Java FX.
 
 
-<br/>
 ## System Requirement
 
 - Java 8 or 11. Any version higher than 11 should work but I've never tested it... who knows lol
 
 
-<br/>
+
 ## Release?
 
 You can find .jar files (executable) in [release](https://github.com/t41372/CSIA-FileRenamer/releases/tag/v1.0).
