@@ -5,9 +5,14 @@
 
 > 本文有中文版, 在[這裡](https://github.com/t41372/CSIA-FileRenamer/blob/fff35e194e968b464802bd2073f9ac52829331f7/README_CN.md)
 
-<br/> <a href="https://github.com/t41372/CSIA-FileRenamer/releases/">
+<br/> 
+<a href="https://github.com/t41372/CSIA-FileRenamer/releases/">
 <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/t41372/CSIA-FileRenamer/total">
-<a/><br/>
+<a/>
+  <br/>
+ Finished in 2021. 03. 11, and may no longer be updated.
+  <br/>
+ <br/>
 
 This is a File Renamer written for my IB Computer Science course IA (kinda like a final project).
 
