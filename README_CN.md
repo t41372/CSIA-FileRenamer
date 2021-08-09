@@ -10,6 +10,11 @@
 > This readme has a English version. Check it out if you need it! [English Version](https://github.com/t41372/CSIA-FileRenamer/blob/a549887e524531f3f1d8dbc48c7ed90b323838ef/README.md)
 
 
+本項目完成於2021.03.11, 並且大概率不會再更新, 除非心情好。
+<br/>
+<br/>
+<br/>
+
 
 
 這是為我的 IB 計算機科學課程 IA 編寫的文件重命名器（有點像最終項目）。
