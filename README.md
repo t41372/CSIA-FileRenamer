@@ -52,7 +52,8 @@ Discover it **YOURSELF!**
 You're a smart guy and I believe you will automatically understand my software by intuition!
 
 ## Known Issues
-  - It cannot handle files larger than ~140MB
+  - It might fail while handling files larger than ~140MB
+  - It might not rename if the target name contains illegal characters
 
 
 ## What can it do?
